@@ -1,0 +1,64 @@
+/* Pranali Patil – Portfolio styles */
+:root{--bg:#f6f7fb;--card:#fff;--ink:#17202e;--mute:#5b6678;--line:#e1e5ee;--accent:#2f6fe0;--accent2:#7c4dff;--tag:#eaf0fd;--hero:linear-gradient(135deg,#1f3a5f,#2f6fe0 60%,#7c4dff);
+color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e131b;--card:#161d29;--ink:#e8edf5;--mute:#9aa6b8;--line:#263044;--accent:#6aa3ff;--tag:#1d2a41;--hero:linear-gradient(135deg,#0f2744,#1d4e9e 60%,#4b2fb3)}}
+:root[data-theme="dark"]{--bg:#0e131b;--card:#161d29;--ink:#e8edf5;--mute:#9aa6b8;--line:#263044;--accent:#6aa3ff;--tag:#1d2a41;--hero:linear-gradient(135deg,#0f2744,#1d4e9e 60%,#4b2fb3)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}
+
+/* Navigation */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;justify-content:space-between;align-items:center;padding:12px 24px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--bg)}
+nav b{font-size:17px}
+nav div{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+nav div a{color:var(--mute)}
+nav div a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{background:var(--hero);color:#fff;padding:84px 24px 72px}
+.wrap{max-width:1000px;margin:0 auto}
+.hero small{letter-spacing:2px;text-transform:uppercase;opacity:.8;font-size:13px}
+.hero h1{font-size:clamp(36px,7vw,60px);line-height:1.1;margin:10px 0 14px}
+.hero p{max-width:620px;font-size:18px;opacity:.92;margin:0 0 26px}
+.btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:600;margin:0 10px 10px 0;border:1px solid rgba(255,255,255,.6);color:#fff}
+.btn.p{background:#fff;color:#1f3a5f}
+
+/* Sections */
+section{padding:56px 24px}
+h2{font-size:28px;margin:0 0 6px}
+.lead{color:var(--mute);margin:0 0 28px}
+.alt{background:color-mix(in srgb,var(--card) 60%,var(--bg))}
+
+/* Cards */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{margin:0 0 4px;font-size:18px}
+.meta{color:var(--mute);font-size:13.5px}
+.card ul{margin:10px 0 0;padding-left:18px}
+.card li{margin:3px 0;font-size:15px}
+.card .link{margin:12px 0 0}
+
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{background:var(--tag);color:var(--accent);border-radius:20px;padding:2px 11px;font-size:13px;font-weight:500}
+
+/* Stats */
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:24px}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.stats b{display:block;font-size:26px;color:var(--accent)}
+.stats span{font-size:13px;color:var(--mute)}
+
+/* Timeline (internships) */
+.tl{border-left:2px solid var(--line);padding-left:20px;margin-left:6px}
+.tl .card{margin-bottom:16px;position:relative}
+.tl .card::before{content:"";position:absolute;left:-29px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+
+/* Contact + footer */
+.contact{text-align:center}
+.contact .grid{max-width:700px;margin:0 auto}
+footer{text-align:center;padding:24px;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+
+/* Mobile */
+@media (max-width:640px){nav{padding:10px 16px}nav b{display:none}.hero{padding:56px 20px}}

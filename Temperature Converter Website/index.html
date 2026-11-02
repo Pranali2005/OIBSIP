@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Temperature Converter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="converter">
+  <h1>Temperature Converter</h1>
+  <p class="subtitle">Convert between Celsius, Fahrenheit and Kelvin.</p>
+
+  <form id="form" novalidate>
+    <div class="field">
+      <label for="value">Temperature value</label>
+      <input id="value" type="text" inputmode="decimal" autocomplete="off"
+             placeholder="e.g. 36.6" aria-describedby="error" aria-invalid="false">
+    </div>
+
+    <div class="field">
+      <label for="unit">Convert from</label>
+      <select id="unit">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+      </select>
+    </div>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <button type="submit" id="convert">Convert</button>
+  </form>
+
+  <section id="results" class="results" aria-live="polite" hidden>
+    <h2>Result</h2>
+    <div class="result-grid">
+      <div class="result" id="out-C"><span class="label">Celsius</span><strong></strong></div>
+      <div class="result" id="out-F"><span class="label">Fahrenheit</span><strong></strong></div>
+      <div class="result" id="out-K"><span class="label">Kelvin</span><strong></strong></div>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
